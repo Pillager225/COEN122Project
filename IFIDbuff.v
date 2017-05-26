@@ -1,27 +1,14 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 05/22/2017 05:24:47 PM
-// Design Name: 
-// Module Name: IDIFBuff
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+module IFIDBuff(clock, iInstr, oInstr);
+input clock;
+input [31:0]iInstr;
 
+reg [31:0]Instr;
 
-module IDIFBuff(
+output reg [31:0]oInstr;
 
-    );
+always @(posedge clock) begin
+	oInstr <= Instr;
+
+	Instr <= iInstr;
+end
 endmodule
-a;sdklfja;lskdfj 
