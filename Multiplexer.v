@@ -1,15 +1,24 @@
-module Multiplexer(control, input0, input1, input2, out);
-input [1:0] control;
+module Multiplexer(control1, control2, input0, input1, input2, out);
+input control1, control2;
 input [31:0] input0, input1, input2;
 output reg [31:0] out;
 
 always @(control or input0 or input1 or input2)
 begin
-	case (control)
-		2'b00: out <= input0;
-		2'b01: out <= input1;
-		2'b10: out <= input2;
-		2'b11: out <= input2;
+	if(control1 == 0)
+		begin 
+			if(control2 == 0)
+				out <= input0;
+			else
+				out <= input2;
+		end 
+	else
+		begin
+			if(control2 == 0)
+				out <= input1;
+			else
+				out <= input2;
+		end
 	endcase
 end
 endmodule
