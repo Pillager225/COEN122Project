@@ -1,5 +1,5 @@
-module DataMemory(clock, write, daddress, din, dout);
-input clock, write;
+module DataMemory(clock, write, read, daddress, din, dout);
+input clock, write, read;
 input [31:0]daddress, din;
 output reg [31:0]dout;
 reg [31:0] block [1023:0];
@@ -10,7 +10,12 @@ always @(negedge clock) begin
             dout <= 0;
         end
     else
-        dout <= block[daddress];
+		begin
+			if(read == 1) 
+				dout <= block[daddress];
+			else
+				dout <= 0;
+		end
 end
 
 initial begin
