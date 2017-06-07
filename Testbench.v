@@ -183,4 +183,10 @@ ORGate #() orGate (
 
 initial begin
 	one = 1;
+	for i in 0 to 255 loop
+		clock = 0;
+		#1
+		clock = 1;
+		#1
+	end loop;
 end
