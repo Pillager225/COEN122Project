@@ -152,8 +152,8 @@ EXWBbuff #() exwbbuff (
 
 // WB stage
 Multiplexer #() wbmux (
-	.control1( ),
-	.control2( ),
+	.control1( ), //PC to reg
+	.control2( ), // mem to reg
 	.input0(exwbALU),
 	.input1(exwbDMEM),
 	.input2(exwbI),
