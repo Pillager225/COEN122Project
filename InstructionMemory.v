@@ -7,9 +7,7 @@ reg [31:0] block [255:0];
 always @(posedge clock) begin
     dout <= block[address];
 end
-//initial begin
-//    block[1] = 1;
-//    $display ("dirt");
-//    dout <= 1;
-//end
+initial begin
+    $readmemh("c:/Users/rcooper/project_5/project_5.srcs/sources_1/new/MemoryData/Imem.txt", block);
+end
 endmodule

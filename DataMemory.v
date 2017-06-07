@@ -19,8 +19,6 @@ always @(negedge clock) begin
 end
 
 initial begin
-    block[1] = 1;
-    block[6] = 6;
-    dout <= 1;
+    $readmemh("c:/Users/rcooper/project_5/project_5.srcs/sources_1/new/MemoryData/Dmem.txt", block);
 end
 endmodule
