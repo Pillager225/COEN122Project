@@ -74,8 +74,8 @@ IFIDBuff #() ifidbuff (
 RegisterFile #() regFile ( 
 	.write(exwbEXMEM[6]), // regwrt from WB control in wb stage
 	.wdata(wbmuxOut),
-	.rs(ifidInstr[27:22]),
-	.rt(ifidInstr[21:16]),
+	.rs(ifidInstr[21:16]),
+	.rt(ifidInstr[15:10]),
 	.rd(exwbRd),
 	.clock(clock),
 	.rsdata(regfileRD1),
@@ -105,7 +105,7 @@ IDEXbuff #() idexbuff (
 	.iMEM(controlMEM),
 	.iRD1(regfileRD1),
 	.iRD2(regfileRD2),
-	.iRd(ifidInstr[15:10]),
+	.iRd(ifidInstr[27:22]),
 	.iI(ifidInstr[21:0]),
 	.oEX(idexEX), // feed this into alu opcode and data memory control
 	.oMEM(idexMEM),
