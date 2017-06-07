@@ -71,22 +71,22 @@ IFIDBuff #() ifidbuff (
 RegisterFile #() regFile ( 
 	.write( ),
 	.wdata(wbmuxOut),
-	.rs( ),
-	.rt( ),
-	.rd( ),
+	.rs(ifidInstr[27:22]),
+	.rt(ifidInstr[21:16]),
+	.rd(ifidInstr[15:10]),
 	.clock(clock),
 	.rsdata(regfileRD1),
 	.rtdata(regfileRD2)
 );
 
 Control #() control (
-	.Opcode( ),
+	.Opcode(ifidInstr[31:28]),
 	.EXOut(controlEX),
 	.MEMOut(controlMEM)
 );
 
 SignExtend #() signextender (
-	.in( ),
+	.in(ifidInstr[21:0]),
 	.out(signExtenderOut)
 );
 
