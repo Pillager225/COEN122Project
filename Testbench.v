@@ -178,15 +178,783 @@ ORGate #() orGate (
 	.in1(bzANDOut),
 	.in2(bnANDOut),
 	.in3(exwbEXMEM[3]), // jump part of WB from control
-	.out(orOut),
+	.out(orOut)
 );
 
 initial begin
 	one = 1;
-	for i in 0 to 255 loop
-		clock = 0;
-		#1
-		clock = 1;
-		#1
-	end loop;
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1	
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1
+    	
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1
+    	
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1
+    	
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1
+    	
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1    
+    clock = 0;
+    #1
+    clock = 1;
+    #1
+    $finish;
 end
+endmodule

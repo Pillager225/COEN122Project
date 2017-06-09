@@ -33,3 +33,4 @@ always @(posedge clock) begin
 	N <= iN;
 	Z <= iZ;
 end
+endmodule

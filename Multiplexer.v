@@ -3,7 +3,7 @@ input control1, control2;
 input [31:0] input0, input1, input2;
 output reg [31:0] out;
 
-always @(control or input0 or input1 or input2)
+always @(control1 or control2 or input0 or input1 or input2)
 begin
 	if(control1 == 0)
 		begin 
@@ -19,6 +19,5 @@ begin
 			else
 				out <= input2;
 		end
-	endcase
 end
 endmodule
