@@ -30,4 +30,9 @@ begin
                 assign N = 0;
         end
 end
+initial begin
+    OUT = 0;
+    Z = 0;
+    N = 0;
+end
 endmodule

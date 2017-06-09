@@ -13,4 +13,9 @@ always @(posedge clock) begin
 	Instr <= iInstr;
 	pc <= ipc;
 end
+
+initial begin
+    oInstr = 0;
+	opc = 0;
+end
 endmodule

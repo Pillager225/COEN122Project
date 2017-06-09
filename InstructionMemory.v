@@ -8,6 +8,7 @@ always @(posedge clock) begin
     dout <= block[address];
 end
 initial begin
-    $readmemh("c:/Users/rcooper/project_5/project_5.srcs/sources_1/new/MemoryData/Imem.txt", block);
+    $readmemh("c:/Users/rcooper/project_5/project_5.srcs/sources_1/new/MemoryData/sum.txt", block);
+    dout = 0;
 end
 endmodule

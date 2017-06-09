@@ -10,4 +10,7 @@ always @(posedge clock) begin
 	out <= instr;
 	instr <= in;
 end
+initial begin
+    out = 1;
+end
 endmodule

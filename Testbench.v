@@ -3,36 +3,37 @@ module Testbench();
 reg clock;
 
 // pc vars
-reg [31:0]pcmuxOut, pcOut, one, pcAdderOut;
+wire [31:0]pcmuxOut, pcOut, pcAdderOut;
+reg [31:0]one;
 // Instruction Memory vars
-reg [31:0]imemOut;
+wire [31:0]imemOut;
 // sign extender vars
-reg [31:0]signExtenderOut;
+wire [31:0]signExtenderOut;
 // IFID buff vars out
-reg [31:0]ifidPC, ifidInstr;
+wire [31:0]ifidPC, ifidInstr;
 // iAdder vars
-reg [31:0]iAdderOut;
+wire [31:0]iAdderOut;
 // Control vars out
-reg [4:0]controlEX, controlMEM;
+wire [4:0]controlEX, controlMEM;
 // RegisterFile vars out
-reg [31:0]regfileRD1, regfileRD2;
+wire [31:0]regfileRD1, regfileRD2;
 // IDEX buff vars out
-reg [31:0]idexRD1, idexRD2, idexI, idexRd, idexMEM;
-reg [31:0]idexEX;
+wire [31:0]idexRD1, idexRD2, idexI, idexRd, idexMEM;
+wire [31:0]idexEX;
 // Data memory vars out
-reg [31:0]dmemOut;
+wire [31:0]dmemOut;
 // ALU vars out
-reg [31:0]aluOut;
-reg aluZ, aluN;
+wire [31:0]aluOut;
+wire aluZ, aluN;
 // EXWB buff vars out
-reg [31:0]exwbDMEM, exwbALU, exwbI;
-reg [31:0]exwbEXMEM;
-reg [5:0]exwbRd;
-reg exwbZ, exwbN;
+wire [31:0]exwbDMEM, exwbALU, exwbI;
+wire [31:0]exwbEXMEM;
+wire [5:0]exwbRd;
+wire exwbZ, exwbN;
 // wb mux vars out
-reg [31:0]wbmuxOut;
+wire [31:0]wbmuxOut;
 // logic gate vars out
-reg bzANDOut, bnANDOut, orOut;
+wire bzANDOut, bnANDOut, orOut;
 
 // IF stage
 Multiplexer #() pcmux (
@@ -192,769 +193,518 @@ initial begin
     clock = 1;
     #1    
     clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1	
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1
-    	
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1
-    	
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1
-    	
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1
-    	
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1    
-    clock = 0;
-    #1
-    clock = 1;
-    #1
+        #1
+        clock = 1;
+        #1    
+        clock = 0;
+        #1
+        clock = 1;
+        #1    
+        clock = 0;
+            #1
+            clock = 1;
+            #1    
+            clock = 0;
+            #1
+            clock = 1;
+            #1    
+            clock = 0;
+                #1
+                clock = 1;
+                #1    
+                clock = 0;
+                #1
+                clock = 1;
+                #1    
+                clock = 0;
+                    #1
+                    clock = 1;
+                    #1    
+                    clock = 0;
+                    #1
+                    clock = 1;
+                    #1    
+                    clock = 0;
+                        #1
+                        clock = 1;
+                        #1    
+                        clock = 0;
+                        #1
+                        clock = 1;
+                        #1    
+                        clock = 0;
+                            #1
+                            clock = 1;
+                            #1    
+                            clock = 0;
+                            #1
+                            clock = 1;
+                            #1    
+                            clock = 0;
+                                #1
+                                clock = 1;
+                                #1    
+                                clock = 0;
+                                #1
+                                clock = 1;
+                                #1    
+                                clock = 0;
+                                    #1
+                                    clock = 1;
+                                    #1    
+                                    clock = 0;
+                                    #1
+                                    clock = 1;
+                                    #1    
+                                    clock = 0;
+                                        #1
+                                        clock = 1;
+                                        #1    
+                                        clock = 0;
+                                        #1
+                                        clock = 1;
+                                        #1    
+                                        clock = 0;
+                                            #1
+                                            clock = 1;
+                                            #1    
+                                            clock = 0;
+                                            #1
+                                            clock = 1;
+                                            #1    
+                                            clock = 0;
+                                                #1
+                                                clock = 1;
+                                                #1    
+                                                clock = 0;
+                                                #1
+                                                clock = 1;
+                                                #1    
+                                                clock = 0;
+                                                    #1
+                                                    clock = 1;
+                                                    #1    
+                                                    clock = 0;
+                                                    #1
+                                                    clock = 1;
+                                                    #1   
+                                                    clock = 0;
+                                                        #1
+                                                        clock = 1;
+                                                        #1    
+                                                        clock = 0;
+                                                        #1
+                                                        clock = 1;
+                                                        #1    
+                                                        clock = 0;
+                                                            #1
+                                                            clock = 1;
+                                                            #1    
+                                                            clock = 0;
+                                                            #1
+                                                            clock = 1;
+                                                            #1    
+                                                            clock = 0;
+                                                                #1
+                                                                clock = 1;
+                                                                #1    
+                                                                clock = 0;
+                                                                #1
+                                                                clock = 1;
+                                                                #1    
+                                                                clock = 0;
+                                                                    #1
+                                                                    clock = 1;
+                                                                    #1    
+                                                                    clock = 0;
+                                                                    #1
+                                                                    clock = 1;
+                                                                    #1    
+                                                                    clock = 0;
+                                                                        #1
+                                                                        clock = 1;
+                                                                        #1    
+                                                                        clock = 0;
+                                                                        #1
+                                                                        clock = 1;
+                                                                        #1    
+                                                                        clock = 0;
+                                                                            #1
+                                                                            clock = 1;
+                                                                            #1    
+                                                                            clock = 0;
+                                                                            #1
+                                                                            clock = 1;
+                                                                            #1    
+                                                                            clock = 0;
+                                                                                #1
+                                                                                clock = 1;
+                                                                                #1    
+                                                                                clock = 0;
+                                                                                #1
+                                                                                clock = 1;
+                                                                                #1    
+                                                                                clock = 0;
+                                                                                    #1
+                                                                                    clock = 1;
+                                                                                    #1    
+                                                                                    clock = 0;
+                                                                                    #1
+                                                                                    clock = 1;
+                                                                                    #1    
+                                                                                    clock = 0;
+                                                                                        #1
+                                                                                        clock = 1;
+                                                                                        #1    
+                                                                                        clock = 0;
+                                                                                        #1
+                                                                                        clock = 1;
+                                                                                        #1    
+                                                                                        clock = 0;
+                                                                                            #1
+                                                                                            clock = 1;
+                                                                                            #1    
+                                                                                            clock = 0;
+                                                                                            #1
+                                                                                            clock = 1;
+                                                                                            #1    
+                                                                                            clock = 0;
+                                                                                                #1
+                                                                                                clock = 1;
+                                                                                                #1    
+                                                                                                clock = 0;
+                                                                                                #1
+                                                                                                clock = 1;
+                                                                                                #1    
+                                                                                                clock = 0;
+                                                                                                    #1
+                                                                                                    clock = 1;
+                                                                                                    #1    
+                                                                                                    clock = 0;
+                                                                                                    #1
+                                                                                                    clock = 1;
+                                                                                                    #1    
+                                                                                                    clock = 0;
+                                                                                                        #1
+                                                                                                        clock = 1;
+                                                                                                        #1    
+                                                                                                        clock = 0;
+                                                                                                        #1
+                                                                                                        clock = 1;
+                                                                                                        #1    
+                                                                                                        clock = 0;
+                                                                                                            #1
+                                                                                                            clock = 1;
+                                                                                                            #1    
+                                                                                                            clock = 0;
+                                                                                                            #1
+                                                                                                            clock = 1;
+                                                                                                            #1    
+                                                                                                            clock = 0;
+                                                                                                                #1
+                                                                                                                clock = 1;
+                                                                                                                #1    
+                                                                                                                clock = 0;
+                                                                                                                #1
+                                                                                                                clock = 1;
+                                                                                                                #1    
+                                                                                                                clock = 0;
+                                                                                                                    #1
+                                                                                                                    clock = 1;
+                                                                                                                    #1    
+                                                                                                                    clock = 0;
+                                                                                                                    #1
+                                                                                                                    clock = 1;
+                                                                                                                    #1    
+                                                                                                                    clock = 0;
+                                                                                                                        #1
+                                                                                                                        clock = 1;
+                                                                                                                        #1    
+                                                                                                                        clock = 0;
+                                                                                                                        #1
+                                                                                                                        clock = 1;
+                                                                                                                        #1    
+                                                                                                                        clock = 0;
+                                                                                                                            #1
+                                                                                                                            clock = 1;
+                                                                                                                            #1    
+                                                                                                                            clock = 0;
+                                                                                                                            #1
+                                                                                                                            clock = 1;
+                                                                                                                            #1    
+                                                                                                                            clock = 0;
+                                                                                                                                #1
+                                                                                                                                clock = 1;
+                                                                                                                                #1    
+                                                                                                                                clock = 0;
+                                                                                                                                #1
+                                                                                                                                clock = 1;
+                                                                                                                                #1    
+                                                                                                                                clock = 0;
+                                                                                                                                    #1
+                                                                                                                                    clock = 1;
+                                                                                                                                    #1    
+                                                                                                                                    clock = 0;
+                                                                                                                                    #1
+                                                                                                                                    clock = 1;
+                                                                                                                                    #1    
+                                                                                                                                    clock = 0;
+                                                                                                                                        #1
+                                                                                                                                        clock = 1;
+                                                                                                                                        #1    
+                                                                                                                                        clock = 0;
+                                                                                                                                        #1
+                                                                                                                                        clock = 1;
+                                                                                                                                        #1    
+                                                                                                                                        clock = 0;
+                                                                                                                                            #1
+                                                                                                                                            clock = 1;
+                                                                                                                                            #1    
+                                                                                                                                            clock = 0;
+                                                                                                                                            #1
+                                                                                                                                            clock = 1;
+                                                                                                                                            #1    
+                                                                                                                                            clock = 0;
+                                                                                                                                                #1
+                                                                                                                                                clock = 1;
+                                                                                                                                                #1    
+                                                                                                                                                clock = 0;
+                                                                                                                                                #1
+                                                                                                                                                clock = 1;
+                                                                                                                                                #1    
+                                                                                                                                                clock = 0;
+                                                                                                                                                    #1
+                                                                                                                                                    clock = 1;
+                                                                                                                                                    #1    
+                                                                                                                                                    clock = 0;
+                                                                                                                                                    #1
+                                                                                                                                                    clock = 1;
+                                                                                                                                                    #1    
+                                                                                                                                                    clock = 0;
+                                                                                                                                                        #1
+                                                                                                                                                        clock = 1;
+                                                                                                                                                        #1    
+                                                                                                                                                        clock = 0;
+                                                                                                                                                        #1
+                                                                                                                                                        clock = 1;
+                                                                                                                                                        #1    
+                                                                                                                                                        clock = 0;
+                                                                                                                                                            #1
+                                                                                                                                                            clock = 1;
+                                                                                                                                                            #1    
+                                                                                                                                                            clock = 0;
+                                                                                                                                                            #1
+                                                                                                                                                            clock = 1;
+                                                                                                                                                            #1    
+                                                                                                                                                            clock = 0;
+                                                                                                                                                                #1
+                                                                                                                                                                clock = 1;
+                                                                                                                                                                #1    
+                                                                                                                                                                clock = 0;
+                                                                                                                                                                #1
+                                                                                                                                                                clock = 1;
+                                                                                                                                                                #1    
+                                                                                                                                                                clock = 0;
+                                                                                                                                                                    #1
+                                                                                                                                                                    clock = 1;
+                                                                                                                                                                    #1    
+                                                                                                                                                                    clock = 0;
+                                                                                                                                                                    #1
+                                                                                                                                                                    clock = 1;
+                                                                                                                                                                    #1    
+                                                                                                                                                                    clock = 0;
+                                                                                                                                                                        #1
+                                                                                                                                                                        clock = 1;
+                                                                                                                                                                        #1    
+                                                                                                                                                                        clock = 0;
+                                                                                                                                                                        #1
+                                                                                                                                                                        clock = 1;
+                                                                                                                                                                        #1    
+                                                                                                                                                                        clock = 0;
+                                                                                                                                                                            #1
+                                                                                                                                                                            clock = 1;
+                                                                                                                                                                            #1    
+                                                                                                                                                                            clock = 0;
+                                                                                                                                                                            #1
+                                                                                                                                                                            clock = 1;
+                                                                                                                                                                            #1    
+                                                                                                                                                                            clock = 0;
+                                                                                                                                                                                #1
+                                                                                                                                                                                clock = 1;
+                                                                                                                                                                                #1    
+                                                                                                                                                                                clock = 0;
+                                                                                                                                                                                #1
+                                                                                                                                                                                clock = 1;
+                                                                                                                                                                                #1    
+                                                                                                                                                                                clock = 0;
+                                                                                                                                                                                    #1
+                                                                                                                                                                                    clock = 1;
+                                                                                                                                                                                    #1    
+                                                                                                                                                                                    clock = 0;
+                                                                                                                                                                                    #1
+                                                                                                                                                                                    clock = 1;
+                                                                                                                                                                                    #1    
+                                                                                                                                                                                    clock = 0;
+                                                                                                                                                                                        #1
+                                                                                                                                                                                        clock = 1;
+                                                                                                                                                                                        #1    
+                                                                                                                                                                                        clock = 0;
+                                                                                                                                                                                        #1
+                                                                                                                                                                                        clock = 1;
+                                                                                                                                                                                        #1    
+                                                                                                                                                                                        clock = 0;
+                                                                                                                                                                                            #1
+                                                                                                                                                                                            clock = 1;
+                                                                                                                                                                                            #1    
+                                                                                                                                                                                            clock = 0;
+                                                                                                                                                                                            #1
+                                                                                                                                                                                            clock = 1;
+                                                                                                                                                                                            #1    
+                                                                                                                                                                                            clock = 0;
+                                                                                                                                                                                                #1
+                                                                                                                                                                                                clock = 1;
+                                                                                                                                                                                                #1    
+                                                                                                                                                                                                clock = 0;
+                                                                                                                                                                                                #1
+                                                                                                                                                                                                clock = 1;
+                                                                                                                                                                                                #1    
+                                                                                                                                                                                                clock = 0;
+                                                                                                                                                                                                    #1
+                                                                                                                                                                                                    clock = 1;
+                                                                                                                                                                                                    #1    
+                                                                                                                                                                                                    clock = 0;
+                                                                                                                                                                                                    #1
+                                                                                                                                                                                                    clock = 1;
+                                                                                                                                                                                                    #1    
+                                                                                                                                                                                                    clock = 0;
+                                                                                                                                                                                                        #1
+                                                                                                                                                                                                        clock = 1;
+                                                                                                                                                                                                        #1    
+                                                                                                                                                                                                        clock = 0;
+                                                                                                                                                                                                        #1
+                                                                                                                                                                                                        clock = 1;
+                                                                                                                                                                                                        #1    
+                                                                                                                                                                                                        clock = 0;
+                                                                                                                                                                                                            #1
+                                                                                                                                                                                                            clock = 1;
+                                                                                                                                                                                                            #1    
+                                                                                                                                                                                                            clock = 0;
+                                                                                                                                                                                                            #1
+                                                                                                                                                                                                            clock = 1;
+                                                                                                                                                                                                            #1    
+                                                                                                                                                                                                            clock = 0;
+                                                                                                                                                                                                                #1
+                                                                                                                                                                                                                clock = 1;
+                                                                                                                                                                                                                #1    
+                                                                                                                                                                                                                clock = 0;
+                                                                                                                                                                                                                #1
+                                                                                                                                                                                                                clock = 1;
+                                                                                                                                                                                                                #1    
+                                                                                                                                                                                                                clock = 0;
+                                                                                                                                                                                                                    #1
+                                                                                                                                                                                                                    clock = 1;
+                                                                                                                                                                                                                    #1    
+                                                                                                                                                                                                                    clock = 0;
+                                                                                                                                                                                                                    #1
+                                                                                                                                                                                                                    clock = 1;
+                                                                                                                                                                                                                    #1    
+                                                                                                                                                                                                                    clock = 0;
+                                                                                                                                                                                                                        #1
+                                                                                                                                                                                                                        clock = 1;
+                                                                                                                                                                                                                        #1    
+                                                                                                                                                                                                                        clock = 0;
+                                                                                                                                                                                                                        #1
+                                                                                                                                                                                                                        clock = 1;
+                                                                                                                                                                                                                        #1    
+                                                                                                                                                                                                                        clock = 0;
+                                                                                                                                                                                                                            #1
+                                                                                                                                                                                                                            clock = 1;
+                                                                                                                                                                                                                            #1    
+                                                                                                                                                                                                                            clock = 0;
+                                                                                                                                                                                                                            #1
+                                                                                                                                                                                                                            clock = 1;
+                                                                                                                                                                                                                            #1    
+                                                                                                                                                                                                                            clock = 0;
+                                                                                                                                                                                                                                #1
+                                                                                                                                                                                                                                clock = 1;
+                                                                                                                                                                                                                                #1    
+                                                                                                                                                                                                                                clock = 0;
+                                                                                                                                                                                                                                #1
+                                                                                                                                                                                                                                clock = 1;
+                                                                                                                                                                                                                                #1    
+                                                                                                                                                                                                                                clock = 0;
+                                                                                                                                                                                                                                    #1
+                                                                                                                                                                                                                                    clock = 1;
+                                                                                                                                                                                                                                    #1    
+                                                                                                                                                                                                                                    clock = 0;
+                                                                                                                                                                                                                                    #1
+                                                                                                                                                                                                                                    clock = 1;
+                                                                                                                                                                                                                                    #1    
+                                                                                                                                                                                                                                    clock = 0;
+                                                                                                                                                                                                                                        #1
+                                                                                                                                                                                                                                        clock = 1;
+                                                                                                                                                                                                                                        #1    
+                                                                                                                                                                                                                                        clock = 0;
+                                                                                                                                                                                                                                        #1
+                                                                                                                                                                                                                                        clock = 1;
+                                                                                                                                                                                                                                        #1    
+                                                                                                                                                                                                                                        clock = 0;
+                                                                                                                                                                                                                                            #1
+                                                                                                                                                                                                                                            clock = 1;
+                                                                                                                                                                                                                                            #1    
+                                                                                                                                                                                                                                            clock = 0;
+                                                                                                                                                                                                                                            #1
+                                                                                                                                                                                                                                            clock = 1;
+                                                                                                                                                                                                                                            #1    
+                                                                                                                                                                                                                                            clock = 0;
+                                                                                                                                                                                                                                                #1
+                                                                                                                                                                                                                                                clock = 1;
+                                                                                                                                                                                                                                                #1    
+                                                                                                                                                                                                                                                clock = 0;
+                                                                                                                                                                                                                                                #1
+                                                                                                                                                                                                                                                clock = 1;
+                                                                                                                                                                                                                                                #1    
+                                                                                                                                                                                                                                                clock = 0;
+                                                                                                                                                                                                                                                    #1
+                                                                                                                                                                                                                                                    clock = 1;
+                                                                                                                                                                                                                                                    #1    
+                                                                                                                                                                                                                                                    clock = 0;
+                                                                                                                                                                                                                                                    #1
+                                                                                                                                                                                                                                                    clock = 1;
+                                                                                                                                                                                                                                                    #1    
+                                                                                                                                                                                                                                                    clock = 0;
+                                                                                                                                                                                                                                                        #1
+                                                                                                                                                                                                                                                        clock = 1;
+                                                                                                                                                                                                                                                        #1    
+                                                                                                                                                                                                                                                        clock = 0;
+                                                                                                                                                                                                                                                        #1
+                                                                                                                                                                                                                                                        clock = 1;
+                                                                                                                                                                                                                                                        #1    
+                                                                                                                                                                                                                                                        clock = 0;
+                                                                                                                                                                                                                                                            #1
+                                                                                                                                                                                                                                                            clock = 1;
+                                                                                                                                                                                                                                                            #1    
+                                                                                                                                                                                                                                                            clock = 0;
+                                                                                                                                                                                                                                                            #1
+                                                                                                                                                                                                                                                            clock = 1;
+                                                                                                                                                                                                                                                            #1    
+                                                                                                                                                                                                                                                            clock = 0;
+                                                                                                                                                                                                                                                                #1
+                                                                                                                                                                                                                                                                clock = 1;
+                                                                                                                                                                                                                                                                #1    
+                                                                                                                                                                                                                                                                clock = 0;
+                                                                                                                                                                                                                                                                #1
+                                                                                                                                                                                                                                                                clock = 1;
+                                                                                                                                                                                                                                                                #1    
+                                                                                                                                                                                                                                                                clock = 0;
+                                                                                                                                                                                                                                                                    #1
+                                                                                                                                                                                                                                                                    clock = 1;
+                                                                                                                                                                                                                                                                    #1    
+                                                                                                                                                                                                                                                                    clock = 0;
+                                                                                                                                                                                                                                                                    #1
+                                                                                                                                                                                                                                                                    clock = 1;
+                                                                                                                                                                                                                                                                    #1     
+                                                    
     $finish;
 end
 endmodule

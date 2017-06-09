@@ -20,4 +20,8 @@ begin
 		4'b1011: begin EXOut <= 5'b01100; MEMOut <= 7'b0000010; end
 	endcase
 end
+initial begin
+    EXOut = 0;
+    MEMOut = 0;
+end
 endmodule

@@ -2,7 +2,7 @@ module DataMemory(clock, write, read, daddress, din, dout);
 input clock, write, read;
 input [31:0]daddress, din;
 output reg [31:0]dout;
-reg [31:0] block [1023:0];
+reg [31:0] block [9:0];
 always @(negedge clock) begin
     if(write == 1)
         begin
@@ -19,6 +19,7 @@ always @(negedge clock) begin
 end
 
 initial begin
-    $readmemh("c:/Users/rcooper/project_5/project_5.srcs/sources_1/new/MemoryData/Dmem.txt", block);
+    $readmemh("c:/Users/rcooper/project_5/project_5.srcs/sources_1/new/MemoryData/Dmem1.txt", block);
+    dout = 0;
 end
 endmodule

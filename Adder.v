@@ -4,6 +4,9 @@ output reg [31:0] Out;
 
 always @(In1 or In2)
 begin
-	Out = In1 + In2;
+	Out <= In1 + In2;
+end
+initial begin
+    Out <= 0;
 end
 endmodule

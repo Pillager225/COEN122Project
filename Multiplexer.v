@@ -20,4 +20,7 @@ begin
 				out <= input2;
 		end
 end
+initial begin
+    out = 0;
+end
 endmodule

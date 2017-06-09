@@ -10,4 +10,7 @@ always @(in) begin
 	end
 	out[21:0] = in;
 end
+initial begin 
+    out = 0;
+end
 endmodule

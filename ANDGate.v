@@ -8,5 +8,8 @@ always @(in1 or in2) begin
 	else
 		out <= 0;
 end
+initial begin
+    out = 0;
+end
 endmodule
 

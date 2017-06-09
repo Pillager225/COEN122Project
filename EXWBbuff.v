@@ -33,4 +33,13 @@ always @(posedge clock) begin
 	N <= iN;
 	Z <= iZ;
 end
+initial begin
+    oDMEM = 0;
+	oALU = 0;
+	oI = 0;
+	oRd = 0;
+	oWB = 0;
+	oN = 0;
+	oZ = 0;
+end
 endmodule

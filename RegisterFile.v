@@ -4,7 +4,6 @@ input [5:0]rs, rt, rd;
 input [31:0]wdata;
 output reg [31:0]rsdata, rtdata;
 reg [31:0] block [63:0];
-reg i;
 always @(posedge clock) begin
     rsdata <= block[rs];
     rtdata <= block[rt];
@@ -13,10 +12,10 @@ always @(posedge clock) begin
 end
 
 initial begin
+    block[0] = 0;
     block[1] = 1;
-    block[5] = 5;
-    block[6] = 6;
-    rsdata <= 1;
-    rtdata <= 1;
+    block[2] = 8;
+    rsdata = 0;
+    rtdata = 0;
 end
 endmodule

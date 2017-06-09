@@ -34,4 +34,13 @@ always @(posedge clock) begin
     Rd <= iRd;
     I <= iI;
 end
+
+initial begin
+    oEX = 0;
+    oMEM = 0;
+    oRD1 = 0;
+    oRD2 = 0;
+    oRd = 0;
+    oI = 0;
+end
 endmodule
